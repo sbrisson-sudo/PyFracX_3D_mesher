@@ -112,7 +112,7 @@ def mesh_DFN_gmsh_injection_point(input_geom, res, inj_point_coor):
 
     return g_mesh
 
-def mesh_DFN_gmsh_injection_point_with_refinement(input_geom, inj_point_coor, res_fine, res_coarse, d_min, d_max, ):
+def mesh_DFN_gmsh_injection_point_with_refinement(input_geom, inj_point_coor, res_fine, res_coarse, d_min, d_max):
     """Mesh a set of intesecting planes.
 
     :param input_geom: input geometry to mesh
@@ -189,7 +189,7 @@ class FakeGmshObject:
         self._id = tag
 
 
-def mesh_DFN_gmsh_injection_point_with_refinement_at_intersections(input_geom, inj_point_coor, res_inj, res_intersec, res_coarse, d_min_inj, d_max_inj, d_min_intersec, d_max_intersec, out_file):
+def mesh_DFN_gmsh_injection_point_with_refinement_at_intersections(input_geom, inj_point_coor, res_inj, res_intersec, res_coarse, d_min_inj, d_max_inj, d_min_intersec, d_max_intersec):
     """Mesh a set of intesecting planes.
 
     :param input_geom: input geometry to mesh
@@ -389,7 +389,6 @@ def mesh_DFN_gmsh_injection_point_with_refinement_at_intersections(input_geom, i
         print("Error : no CellEntityIds in the output gmsh file")
     
     os.remove("tmp.vtk")
-    meshio.write(out_file, mesh)
         
     return g_mesh
 
